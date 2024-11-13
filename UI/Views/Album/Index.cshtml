@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Album";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!-- ALBUM DESCRIPTION -->
+<div class="album-description container-fluid text-white">
+    <h1 id="title-1" class="special-title-1">ALBUM</h1>
+    <h2 id="title-2" class="special-title-2">Explore Our Galleries</h2>
+</div>
+
+<!-- ALBUM CONTENT -->
+<div class="album-content">
+    <div class="container">
+        <div class="row">
+            <div id="card-food" class="col-md-4">
+                <div class="card box-shadow">
+                    <img class="card-img-top" src="../media/album/album-food@1x.jpg" srcset="../media/album/album-food@1x.jpg 1x, ../media/album/album-food@2x.jpg 2x, ../media/album/album-food@3x.jpg 3x, ../media/album/album-food@4x.jpg 4x" alt="Food image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">FOOD</h5>
+                        <p class="card-text">
+                            dsgfdasfjghlkho;ugHEWRYG80TYGU89GLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam fermentum a sapien non pulvinar.
+                        </p>
+                        <a asp-controller="Album" asp-action="AlbumFood" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-desserts" class="col-md-4">
+                <div class="card box-shadow">
+                    <img class="card-img-top" src="../media/album/album-desserts@1x.jpg" srcset="../media/album/album-desserts@1x.jpg 1x, ../media/album/album-desserts@2x.jpg 2x, ../media/album/album-desserts@3x.jpg 3x, ../media/album/album-desserts@4x.jpg 4x" alt="Dessert image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">DESSERTS</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam fermentum a sapien non pulvinar.
+                        </p>
+                        <a href="gallery-desserts.html" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-drinks" class="col-md-4">
+                <div class="card box-shadow">
+                    <img class="card-img-top" src="../media/album/album-drinks@1x.jpg" srcset="../media/album/album-drinks@1x.jpg 1x, ../media/album/album-drinks@2x.jpg 2x, ../media/album/album-drinks@3x.jpg 3x, ../media/album/album-drinks@4x.jpg 4x" alt="Drink image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">DRINKS</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam fermentum a sapien non pulvinar.
+                        </p>
+                        <a href="gallery-drinks.html" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div id="card-location" class="col-md-4">
+                <div class="card box-shadow">
+                    <img class="card-img-top" src="../media/album/album-location@1x.jpg" srcset="../media/album/album-location@1x.jpg 1x, ../media/album/album-location@2x.jpg 2x, ../media/album/album-location@3x.jpg 3x, ../media/album/album-location@4x.jpg 4x" alt="Location image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">LOCATION</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam fermentum a sapien non pulvinar.
+                        </p>
+                        <a href="gallery-location.html" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-staff" class="col-md-4">
+                <div class="card box-shadow">
+                    <img class="card-img-top" src="../media/album/album-staff@1x.jpg" srcset="../media/album/album-staff@1x.jpg 1x, ../media/album/album-staff@2x.jpg 2x, ../media/album/album-staff@3x.jpg 3x, ../media/album/album-staff@4x.jpg 4x" alt="Staff image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">STAFF</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam fermentum a sapien non pulvinar.
+                        </p>
+                        <a href="gallery-staff.html" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GOOGLE MAP -->
+<div id="googleMapContainer" class="homepage-google-map">
+    <iframe title="Our location on Google My Maps" class="google-map" src="https://www.google.com/maps/d/embed?mid=1YihUagJV98aTSoPRpalSyqRjTVhaFv5E&hl=en"></iframe>
+</div>
+
+    </main>
+
+<footer class="page-footer">
+    <div class="container">
+        <a class="navbar-brand animated pulse d-block text-center m-0 p-0" href="#">
+            <img src="../media/brand/logo-light.svg" width="50" height="50" alt="Logo">
+        </a>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="page-footer-title">OPENING HOURS</h5>
+                <p class="mb-0">Open daily from 8am</p>
+                <p class="mb-0">Bar: Daily from 8am - 12pm</p>
+                <p class="mb-0">Breakfast: Daily from 8am - 11am</p>
+                <p class="mb-0">Lunch: Daily from 12pm - 3pm</p>
+                <p>Dinner: Daily from 6pm - 12pm</p>
+            </div>
+            <div class="col-md-3 h-100 border-left-custom">
+                <h5 class="page-footer-title mt-3 mt-md-0">LOCATION</h5>
+                <address>
+                    Grecko Bar &amp; Seafood Restaurant<br>
+                    24 Akti Kampani St.<br>
+                    846 00, Mykonos, Greece<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890<br>
+                    <abbr title="Email">E:</abbr> info@grecko.com
+                </address>
+            </div>
+            <div class="col-md-3 h-100 border-left-custom">
+                <h5 class="page-footer-title mt-3 mt-md-0">FOLLOW US</h5>
+                <div class="mb-3">
+                    <a class="footer-social" href="https://github.com/PictureElement" aria-label="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a class="footer-social" href="https://github.com/PictureElement" aria-label="tripadvisor"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+                    <a class="footer-social" href="https://github.com/PictureElement" aria-label="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 h-100 border-left-custom">
+                <h5 class="page-footer-title mt-3 mt-md-0">NEWSLETTER</h5>
+                <p>
+                    Complete the form to receive information on the latest events,
+                    news and special offers at Grecko.
+                </p>
+                <form id="newsletter-form">
+                    <label class="sr-only" for="formEmail">Email</label>
+                    <input type="email" class="form-control form-control-sm rounded" id="formEmail" placeholder="name@example.com">
+                    <button type="submit" class="btn btn-sm btn-outline-light btn-block mt-2">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer-copyright container-fluid text-center">
+        © 2018 Grecko Bar &amp; Restaurant. All rights reserved.<br>
+        Design &amp; Development by <a href="https://pictureelement.github.io/portfolio-2/">PictureElement</a> (Marios Sofokleous).
+    </div>
