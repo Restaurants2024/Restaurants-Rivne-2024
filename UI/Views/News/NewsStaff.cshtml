@@ -1,0 +1,190 @@
+﻿<!-- GALLERY DESCRIPTION -->
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+          /* Основний контейнер */
+          .container-custom {
+              padding-bottom: 1rem !important;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 20px;
+              position: relative;
+              z-index: 2;
+              background-color: rgba(255, 255, 255, 0.85); /* Напівпрозорий фон */
+              border-radius: 15px; /* Округлення країв */
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тінь */
+          }
+
+          /* Фон */
+          body {
+              margin: 0;
+              background: url('https://png.pngtree.com/thumb_back/fw800/background/20230519/pngtree-restaurant-design-with-shabby-tables-and-chairs-in-dark-grey-image_2613538.jpg') no-repeat center center fixed;
+              background-size: cover;
+              color: #4b3832;
+              overflow-x: hidden;
+          }
+
+              /* Розмиття фону */
+              body::before {
+                  content: "";
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: inherit;
+                  filter: blur(10px);
+                  z-index: -1;
+              }
+
+          /* Стиль для кнопки Back */
+          .back-btn {
+              display: inline-flex;
+              align-items: center;
+              text-decoration: none;
+              color: white;
+              background-color: #a6a6a6;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+              margin-bottom: 20px;
+          }
+
+              .back-btn:hover {
+                  background-color: #9b9b9b;
+              }
+
+              .back-btn svg {
+                  margin-right: 10px;
+              }
+
+        .menu-image-container {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-top: 20px;
+          }
+
+          .menu-text {
+              flex: 2;
+              margin-right: 0px;
+          }
+
+          .menu-text p {
+              margin-bottom: 10px;
+              color: #333;
+          }
+
+          .menu-image {
+              flex: 1;
+              max-width: 300px;
+              border-radius: 8px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          }
+
+          /* Заголовки та текст */
+          .text-content {
+              flex: 1;
+          }
+
+          h3 {
+              color: #333;
+              font-weight: bold;
+          }
+
+          p {
+              margin-bottom: 1rem;
+              color: #555;
+          }
+
+          hr {
+              border: none;
+              border-top: 1px solid #ddd;
+          }
+
+          /* Стиль для footer */
+          footer {
+              background-color: white;
+              color: #555;
+              text-align;
+              padding: 0px;
+              position: relative;
+              bottom: 0;
+              width: 100%;
+              box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+          }
+
+              footer a {
+                  text-decoration: none;
+                  color: #007bff;
+              }
+
+                  footer a:hover {
+                      text-decoration: underline;
+                  }
+
+          /* Адаптивність */
+          media (max-width: 768px) {
+             .image-text-container {
+                flex-direction: column;
+                align-items: center;
+            }
+  
+
+          .image-text-container img {
+              max-width: 100%;
+          }
+
+          .text-content {
+              text-align: center;
+          }
+
+   </style>
+</head>
+<body>
+
+    <div class="container-custom">
+        <!-- Кнопка Back -->
+        <a href="../News" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+
+        </a>
+
+        <h3 style="font-weight: 700; color: black; text-align: center;">
+            Шеф-кухар Ілля Сьомін оновив меню пивного бару Kyiv Local Bar: тепер є чизбургери й пиво для собак
+        </h3>
+        <div class="menu-image-container">
+            <!-- Текст меню -->
+            <div class="menu-text">
+                <p>Заклад Kyiv Local Bar поблизу Контрактової площі запустив нове меню. За оновлення позицій відповідає команда шеф-кухаря Іллі Сьоміна (Pie Spot, «Спельта»).</p>
+                <h5>З меню:</h5>
+                <p>Бургери – 290–345 гривень</p>
+                <p>Мелти – 290–295 гривень</p>
+                <p>Гуакамоле з батутом фрі – 285 гривень</p>
+                <p>Корн-доги – 160 гривень</p>
+                <p>Курячі крильця – 220 гривень</p>
+                <p>Перці «Падрон» – 185 гривень</p>
+                <p>Фіш-енд-чипс – 290 гривень</p>
+            </div>
+
+            <!-- Зображення -->
+            <img src="https://cdn.village.com.ua/the-village.com.ua/post_image-image/GJk9C9vWwKw5XZk479fztw-article.png" alt="Image" class="menu-image">
+        </div>
+
+        <p> «Нашим завданням було створити ідеальний фудпейрінг страв американського фастфуду й пива від нашої пивоварні Kyiv Local Brewery. До кожної страви ми підбираємо сорти локального пива, які підкреслюють смакові характеристики одне одного!» – розповідають The Village Україна в закладі.</p>
+
+        <p> Наприклад, у меню тепер є три фірмові дабл-чизбургери зі смеш-котлетами: класичний, із блакитним сиром і з беконом. «Також розробили дві позиції, що будуть до вподоби вегетеріанцям: гуакамоле з бататом фрі й перці «Падрон», смажені на грилі з пластівцями солі мелдон», – додають у команді.</p>
+    </div>
+    <div style="height: 30px;"></div>
+    <footer>
+        © 2024 - Rivne Restaurants || Karyna, Dasha and Vova Web-Programming Corporation
+    </footer>
+</body>
+

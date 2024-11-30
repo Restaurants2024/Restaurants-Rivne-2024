@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Рівного</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        /* Стиль для контейнера карти */
+        #map-container {
+            border: 5px solid #333;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        /* Заголовок і пошук */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .title {
+            font-family: 'Arial', sans-serif;
+            font-size: 34px;
+            font-weight: 800; /* Жирний текст */
+            color: #333;
+        }
+
+            .title span {
+                color: #E63946; /* Червоний акцент */
+            }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .search-container input {
+                padding: 10px;
+                width: 250px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .search-container button {
+                padding: 10px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+            }
+
+        /* Кастомне спливаюче вікно */
+        .leaflet-popup-content-wrapper {
+            background: #333; /* Сірий фон */
+            color: #fff; /* Білий текст */
+            border-radius: 5px;
+            box-shadow: none; /* Забираємо стандартну тінь */
+        }
+
+        .leaflet-popup-content {
+            margin: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .leaflet-popup-tip {
+            background: #333; /* Сірий колір підказки */
+        }
+
+        .gray-popup {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+            .gray-popup .details {
+                flex: 1;
+                text-align: left;
+            }
+
+                .gray-popup .details h3 {
+                    margin: 0;
+                    font-size: 16px;
+                    color: #fff;
+                }
+
+                .gray-popup .details p {
+                    margin: 5px 0;
+                    font-size: 14px;
+                }
+
+            .gray-popup img {
+                flex-shrink: 0;
+                width: 100px;
+                height: auto;
+                border-radius: 5px;
+            }
+
+        /* Секція інструкції */
+        .info-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+            .info-section h3 {
+                font-size: 24px;
+                color: #E63946; /* Червоний акцент */
+                margin-bottom: 10px;
+            }
+
+            .info-section p {
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+
+            .info-section ul {
+                padding-left: 20px;
+            }
+
+                .info-section ul li {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+
+    </style>
+</head>
+<body>
+    <!-- Заголовок і пошук -->
+    <div class="header">
+        <div class="title">
+            Карта <span>ресторанів</span>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Введіть назву закладу" />
+            <button onclick="searchPlace()">Знайти</button>
+        </div>
+    </div>
+
+    <!-- Контейнер для карти -->
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Інструкція -->
+    <div class="info-section">
+        <h3>Як користуватись картою:</h3>
+        <p>Ця карта допоможе вам знайти найкращі ресторани у місті Рівне. Використовуйте наступні поради:</p>
+        <ul>
+            <li>Щоб знайти заклад, введіть його назву у поле пошуку та натисніть кнопку "Знайти".</li>
+            <li>Клацніть на маркер на карті, щоб переглянути інформацію про заклад.</li>
+            <li>Для повернення до огляду всієї карти, використовуйте функцію масштабування.</li>
+        </ul>
+        <p>Насолоджуйтесь пошуком та відкривайте для себе найкращі місця для відпочинку!</p>
+    </div>
+
+    <script>
+        // Визначення карти
+        const map = L.map('map', {
+            center: [50.6199, 26.2516], // Центр карти (Рівне)
+            zoom: 13, // Початковий масштаб
+            maxBounds: [[50.584, 26.217], [50.655, 26.292]], // Межі карти (Рівне)
+            maxBoundsViscosity: 1.0 // Блокування прокрутки за межі
+        });
+
+        // Додавання шару OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            minZoom: 12, // Мінімальний масштаб, щоб не можна було надто віддалити
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Кастомна мітка (червона крапка)
+        const customIcon = L.icon({
+            iconUrl: 'https://cdn-icons-png.flaticon.com/512/252/252025.png', // Простий дизайн іконки
+            iconSize: [25, 25], // Розмір іконки
+            iconAnchor: [12, 25], // Точка прив'язки іконки
+            popupAnchor: [0, -25] // Точка відкриття спливаючого вікна
+        });
+
+        // Створення міток
+        const markers = [
+            {
+                name: "Gusto",
+                marker: L.marker([50.62480924252456, 26.24998160046197], { icon: customIcon })
+                    .bindPopup(`
+                                <div class="gray-popup">
+                                    <div class="details">
+                                        <h3>"Gusto Gastro Salon"</h3>
+                                        <hr>
+                                        <p>Ресторан</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/100" alt="Фото закладу" />
+                                </div>
+                            `)
+                    .addTo(map)
+            },
+            {
+                name: "Father",
+                marker: L.marker([50.61319809062691, 26.257508636394192], { icon: customIcon })
+                    .bindPopup(`
+                                <div class="gray-popup">
+                                    <div class="details">
+                                        <h3>"Father"</h3>
+                                        <hr>
+                                        <p>Гастропаб</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/100" alt="Фото закладу" />
+                                </div>
+                            `)
+                    .addTo(map)
+            },
+            {
+                name: "New York Street Pizza",
+                marker: L.marker([50.61881351633372, 26.24826701272601], { icon: customIcon })
+                    .bindPopup(`
+                                <div class="gray-popup">
+                                    <div class="details">
+                                        <h3>"New York Street Pizza"</h3>
+                                        <hr>
+                                        <p>Ресторан</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/100" alt="Фото закладу" />
+                                </div>
+                            `)
+                    .addTo(map)
+            },
+            {
+                name: "DVIR",
+                marker: L.marker([50.62109327462408, 26.247850141630156], { icon: customIcon })
+                    .bindPopup(`
+                                <div class="gray-popup">
+                                    <div class="details">
+                                        <h3>"DVIR"</h3>
+                                        <hr>
+                                        <p>Grill&Bar</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/100" alt="Фото закладу" />
+                                </div>
+                            `)
+                    .addTo(map)
+            },
+            {
+                name: "Fortissimo",
+                marker: L.marker([50.61888152265413, 26.25078473978196], { icon: customIcon })
+                    .bindPopup(`
+                                <div class="gray-popup">
+                                    <div class="details">
+                                        <h3>"Fortissimo"</h3>
+                                        <hr>
+                                        <p>Автентичний стріт-бар</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/100" alt="Фото закладу" />
+                                </div>
+                            `)
+                    .addTo(map)
+            }
+        ];
+
+        // Функція пошуку
+        function searchPlace() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const found = markers.find(item => item.name.toLowerCase().includes(searchTerm));
+
+            if (found) {
+                map.setView(found.marker.getLatLng(), 16); // Збільшуємо масштаб та центруємо мітку
+                found.marker.openPopup(); // Відкриваємо попап
+            } else {
+                alert('Заклад не знайдено. Спробуйте іншу назву.');
+            }
+        }
+
+        // Заборона прокрутки за межі карти
+        map.on('drag', function () {
+            map.panInsideBounds([[50.584, 26.217], [50.655, 26.292]]);
+        });
+    </script>
+</body>
+</html>

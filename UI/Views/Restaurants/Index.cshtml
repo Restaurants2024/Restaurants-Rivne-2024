@@ -1,0 +1,121 @@
+﻿<h1>@ViewData["Title"]</h1>
+
+<!-- ALBUM DESCRIPTION -->
+<style>
+.album-description {
+    background-color: #FFE4E1; /* Пастельний рожевий */
+    padding: 100px; /* Додатковий простір всередині елемента */
+    border-radius: 1px; /* Заокруглені краї (за бажанням) */
+}
+
+    .homepage-special-offers {
+        position: relative; /* Для розташування псевдоелемента */
+    }
+
+        .homepage-special-offers::after {
+            content: ""; /* Порожній контент для псевдоелемента */
+            display: block; /* Лінія буде відображатися */
+            width: 100%; /* Лінія на всю ширину сторінки */
+            height: 1px; /* Тонка лінія */
+            background-color: #ccc; /* Світло-сірий колір */
+            margin-top: 10px; /* Відступ від тексту до лінії */
+            opacity: 0.7; /* Прозорість для меншої помітності */
+            position: absolute; /* Лінія буде відносно контейнера */
+            left: 0; /* Вирівнювання по лівому краю */
+            bottom: 0; /* Розташування внизу контейнера */
+
+        }
+
+    .card-img-top {
+        width: 100%; /* Зображення розтягується на ширину контейнера */
+        height: 270px; /* Зберігає пропорції */
+        object-fit: cover; /* Адаптує зображення до контейнера без спотворень */
+        max-width: 100%; /* Запобігає виходу за межі контейнера */
+    }
+
+</style>
+<div class="album-description container-fluid text-black">
+    <link rel="stylesheet" href="styles.css">
+    <h1 id="title-1" class="special-title-3">RESTAURANTS</h1>
+    <h2 id="title-2" class="special-title-3">ТУТ ЗНАХОДЯТЬСЯ ВСІ РЕСТОРАНИ</h2>
+</div>
+
+<!-- ALBUM CONTENT -->
+ <div class="homepage-special-offers container">
+    <link rel="stylesheet" href="styles.css">
+        <h3 class="special-title-2 text-center">ТУТ ВИ МОЖЕТЕ ПОДИВИТИСЯ РЕСТОРАН ЯКИЙ БИ ВИ ХТІЛИ ВІДВІДАТИ</h3>
+        </div>
+        
+<div class="album-content">
+    <div class="container">
+        <div class="row">
+            <div id="card-food" class="col-md-4">
+                <div class="card box-shadow">
+                        <img class="card-img-top" srcset="https://rivne.bestrest.com.ua/sites/default/files/styles/thumb-1000x700px-zaokruglennya/public/images/info/233025/top-233025.jpg?itok=RzvWx92v">
+                    <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Ресторан "Gusto gastro salon" ("Густо гастро салон")</h5>
+                        <p class="card-text">
+                            Gusto – це авторські страви європейської та японської кухні з унікальним методом
+                            приготування. Це ексклюзивна алкогольна карта та меню авторських
+                            і класичних коктейлів . Це найкращі рецепти домашніх десертів
+                            зібрані з різних куточків світу.
+                        </p>
+                        <a asp-controller="Restaurants" asp-action="Restaurant1" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-desserts" class="col-md-4">
+                <div class="card box-shadow">
+                        <img class="card-img-top" srcset="https://evrobud.renome.ua/wp-content/uploads/2018/05/P1240806.jpg">
+                    <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Гастропаб "Father"("Фазер")</h5>
+                        <p class="card-text">
+                                Міні-пивоварня ресторанного типу гастропаб "Father". Тут встановлено обладнання від угорської компанії «ZIP Technologies», на якому на сьогоднішній день варять чотири сорти пива. Крім того, Ви тут поласуйте різноманітними стравами на будь-який смак і поринете в неповторну атмосферу закладу, відволікши себе від рутинної метушні.
+                        </p>
+                        <a asp-controller="Restaurants" asp-action="Restaurant2" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-drinks" class="col-md-4">
+                <div class="card box-shadow">
+                        <img class="card-img-top" srcset="https://rivne.bestrest.com.ua/sites/default/files/styles/thumb-1000x700px-zaokruglennya/public/images/info/236499/top-236499.jpg?itok=Ombdh8cG">
+                    <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Автентичний стріт-бар "Fortissimo" ("Фортіссімо")</h5>
+                        <p class="card-text">
+                            У Fortissimo представлені унікальні алкогольні напої та коктейльні композиції і авторська кухня американського та європейського зразку. Цілодобовий режим роботи зобов'язує нас працювати у ритмі життя динамічного містечка західної України. Fortissimo – це оптимальний вибір для гостей міста, і затишний відпочинок для його постійних мешканців щодня.
+                        </p>
+                        <a asp-controller="Restaurants" asp-action="Restaurant3" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div id="card-location" class="col-md-4">
+                <div class="card box-shadow">
+                        <img class="card-img-top" src="../media/album/album-location@1x.jpg" srcset="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/df/95/c1/getlstd-property-photo.jpg?w=600&h=-1&s=1" alt="Location image">
+                    <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Ресторан "Nеw York Strееt Pіzzа"</h5>
+                        <p class="card-text">
+                            New York Street Pizza – смачна гаряча їжа з швидкою доставкою, постійними акціями та новинками. Заклад-космополіт: тут створено усе, що може потребувати житель або гість міста.
+                        </p>
+                        <a asp-controller="Restaurants" asp-action="Restaurant4" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-staff" class="col-md-4">
+                <div class="card box-shadow">
+                        <img class="card-img-top" src="https://rivne.bestrest.com.ua/sites/default/files/styles/thumb-1000x700px-zaokruglennya/public/images/info/232431/top-232431.jpg?itok=HlpqjrOJ">
+                    <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Grill&Bar DVIR</h5>
+                        <p class="card-text">
+                                Ресторан гриль-бар "Dvir" розташований у центральній частині міста Рівного. Має унікальний інтер'єр та розташування, створюючи особливу атмосферу для своїх гостей.
+                        </p>
+                        <a asp-controller="Restaurants" asp-action="Restaurant5" class="btn btn-outline-dark" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      <form id="newsletter-form">
+      </form>

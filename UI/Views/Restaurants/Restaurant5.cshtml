@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жива музика</title>
+
+    <style>
+        /* Основний контейнер */
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.85); /* Напівпрозорий фон */
+            border-radius: 15px; /* Округлення країв */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тінь */
+        }
+
+        /* Фон */
+        body {
+            margin: 0;
+            background: url('https://img.freepik.com/premium-photo/restaurant-cafe-coffee-shop-interior-with-people-abstract-defocused-blur-background_293060-8703.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4b3832;
+            overflow-x: hidden;
+        }
+
+            /* Розмиття фону */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                filter: blur(10px);
+                z-index: -1;
+            }
+
+        /* Стиль для кнопки Back */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            background-color: #a6a6a6;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .back-btn:hover {
+                background-color: #9b9b9b;
+            }
+
+            .back-btn svg {
+                margin-right: 10px;
+            }
+
+        /* Контейнер для зображення та тексту */
+        .image-text-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+            .image-text-container img {
+                width: 450px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тінь навколо зображення */
+            }
+
+        /* Заголовки та текст */
+        .text-content {
+            flex: 1;
+        }
+
+        h3 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Стиль для footer */
+        footer {
+            background-color: white;
+            color: #555;
+            text-align;
+            padding: 0px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            footer a {
+                text-decoration: none;
+                color: #007bff;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Адаптивність */
+        media (max-width: 768px) {
+            .image-text-container
+
+        {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-text-container img {
+            max-width: 100%;
+        }
+
+        .text-content {
+            text-align: center;
+        }
+
+        }</style>
+</head>
+<body>
+    <div class="container-custom">
+        <!-- Кнопка Back -->
+        <a href="../Restaurants" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+
+        </a>
+
+        <!-- Блок із зображенням і текстом -->
+        <div class="image-text-container">
+            <!-- Зображення -->
+            <img src="https://rivne.bestrest.com.ua/sites/default/files/styles/thumb-1000x700px-zaokruglennya/public/images/info/232431/top-232431.jpg?itok=HlpqjrOJ"
+                 alt="Жива музика">
+
+            <!-- Текст -->
+            <div class="text-content">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="vertical-align: middle; margin-right: 5px;" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 5v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5H1z" />
+                    </svg>
+                    Графік роботи: Пн.-Чт. 10:00-21:45, Пт.-Нд. 10:00-22:45
+                </p>
+                <h3>Grill&Bar DVIR</h3>
+                <p>
+                    Ресторан гриль-бар "Dvir" розташований у центральній частині міста Рівного. Має унікальний інтер'єр та розташування, створюючи особливу атмосферу для своїх гостей. Пропонує своїм відвідувачам страви української та європейської кухонь, а також великий вибір напоїв на будь-який смак. Привітний персонал забезпечить якісний сервіс. У закладі є дуже велика та затишна літня тераса, де приємно посидіти з друзями або в сімейному колі.
+                </p>
+                <p><strong>Меню:</strong> <a href="https://grill-bar-dvir.choiceqr.com/" target="_blank">Переглянути меню</a></p>
+                <p>📞 Reserve: +38 (068) 072 40 46</p>
+                <p>📍 Location: вул. Симона Петлюри, 3</p>
+                <hr>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

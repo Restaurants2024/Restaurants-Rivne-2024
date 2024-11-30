@@ -4,9 +4,9 @@ using UI.Models;
 
 namespace UI.Controllers
 {
-    public class ReservationsController : Controller
+    public class ReviewsController : Controller
     {
-        public ReservationsController()
+        public ReviewsController()
         {
         }
 

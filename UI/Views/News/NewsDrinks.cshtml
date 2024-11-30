@@ -1,0 +1,219 @@
+﻿<!-- GALLERY DESCRIPTION -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жива музика</title>
+
+    <style>
+        /* Основний контейнер */
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.85); /* Напівпрозорий фон */
+            border-radius: 15px; /* Округлення країв */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тінь */
+        }
+
+        /* Фон */
+        body {
+            margin: 0;
+            background: url('https://png.pngtree.com/thumb_back/fw800/background/20230519/pngtree-restaurant-design-with-shabby-tables-and-chairs-in-dark-grey-image_2613538.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4b3832;
+            overflow-x: hidden;
+        }
+
+            /* Розмиття фону */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                filter: blur(10px);
+                z-index: -1;
+            }
+
+        /* Стиль для кнопки Back */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            background-color: #a6a6a6;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .back-btn:hover {
+                background-color: #9b9b9b;
+            }
+
+            .back-btn svg {
+                margin-right: 10px;
+            }
+
+        /* Контейнер для зображення та тексту */
+        .image-text-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+            .image-text-container img {
+                width: 450px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тінь навколо зображення */
+            }
+
+        /* Заголовки та текст */
+        .text-content {
+            flex: 1;
+        }
+
+        h3 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Стиль для footer */
+        footer {
+            background-color: white;
+            color: #555;
+            text-align;
+            padding: 0px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            footer a {
+                text-decoration: none;
+                color: #007bff;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Адаптивність */
+        media (max-width: 768px) {
+            .image-text-container
+
+        {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-text-container img {
+            max-width: 100%;
+        }
+
+        .text-content {
+            text-align: center;
+        }
+        
+
+       </style>
+ </head>
+<body>
+    <div class="container-custom ">
+        <!-- Кнопка Back -->
+        <a href="../News" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+
+        </a>
+
+        <h3 style="font-weight: 700; color: black; text-align: center;">
+            30 жовтня у Києві відбувся захід "SALT: Restaurant Innovation Conference"
+        </h3>
+
+        <img src="https://reston.ua/images/img/salt_kyiv_649_03_11_2023_1.jpg" alt="Image" style="width: 600px; display: block; margin: 20px auto 0;">
+        <p>Одноденна інтерактивна подія, яка ознайомила з усіма трендами розвитку ресторанної індустрії, надала практичну, корисну інформацію для трансформації бізнесу та поділилась історіями успіху провідних компаній.</p>
+        <p> Вперше у Києві на "SALT: Restaurant Innovation Conference" був представлений новий, повністю електричний автомобіль BMW I5. Учасники та гості конференції змогли першими познайомитись з новітніми технологіями.</p>
+        <p>Офіційно відкрив конференцію засновник та CEO HOTELIERO, Національної Премії "СІЛЬ" та SALT: Restaurant Innovation Conferece - Андрій Скіп’ян, а зі вступною промовою виступив ресторатор та візіонер Премії "СІЛЬ" Савелій Лібкін.</p>
+        <img src="https://posteat.ua/wp-content/uploads/2023/11/IMG_1492-600x401.jpg" alt="Image" style="width: 600px; display: block; margin: 20px auto 0;">
+        <img src="https://reston.ua/images/img/salt_kyiv_649_03_11_2023_5.jpg" alt="Image" style="width: 600px; display: block; margin: 10px auto 0;">
+        <p>
+            На конференції кожен спікер поділився своїм цінним досвідом та спробував розширити світогляд на бізнес. Серед них:
+        </p>
+        <ul style="list-style-type: none; font-family: Arial, sans-serif; font-size: 16px;">
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                1. Співзасновник Monobank Михайло Рогальський, який розповів про новий проєкт Expirienza 2.0 та його особливості: як обирати заклади за стравами, створювати списки улюблених страв та додавати продукти, на які є алергія.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                2. Андрій Длігач про те, як ресторани стають трендами ком‘юніті, наскільки складною залишається ситуація з ресторанною індустрією та на чому будуватиметься маркетинг.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                3. Тарас Маселко з темою: "Тенденції з життя холдингу емоцій "!FEST". Про тенденції в часі воєнного стану, освіту, івенти, виробництва і масштабування бізнесу". Гості конференції дізнались, як змінився формат заходів під час війни та як це проводити івенти в укритті.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                4. Євгеній Таллер співвласник ресторанів "Ministry of..." поділився ідеями, як залучити інфлюенсерів до взаємодії з бізнесом.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                5. Головна директорка "Glovo Ukraine" Марина Павлюк виступила з темою "Тенденції фудтек, як можливості для рестораторів: віртуальні бренди, хмарні кухні, швидка доставка та нові споживчі звички українців".
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                6. Олександр Краковецький відкрив блок "Технології та софт", висвітлив реальні кейси використання ШІ в ресторанній індустрії та детально розповів чому всі говорять про ШІ.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                7. Великий зелений салат Forrest Club
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                8. CEO та співвласник компанії Servio Soft - Ігор Гречко, у своїй доповіді розкрив тему діджиталізації, онлайн сервісів для збільшення прибутку та як досягти найкращого за допомогою сучасного програмного забезпечення.
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                9. Радниця офісу з розвитку підприємництва та експорту Анна Міленіна поділилась, як правильно підготувати грантову заявку, на що звертати увагу та яких помилок слід уникати, аби отримати цікавий грант.
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">
+                <span style="width: 8px; height: 8px;  border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                10. Жорж Піонов презентував свій новий проєкт про освіту та розповів навіщо ресторанному бізнесу потрібні інновації.
+            </li>
+        </ul>
+        <img src="https://yizhakultura.com/uploads/images/materials/full/20231105_1622_001.JPG" alt="Image" style="width: 600px; display: block; margin: 20px auto 0;">
+        <p>Також, на конференцію був запрошений спеціальний гість з Британії - Чарльз Бенкс, кофаундер провідної трендвочінг агенції The Food People, який розповів про топ 10 трендів 2023/2024 років, серед яких "Вартість приготування", "Точна ферментація", "Назад до основ", "Новий клімат&культура" та інші.</p>
+        <img src="https://www.saltconference.com.ua/wp-content/uploads/2024/11/kopyya1117-scaled.jpg" alt="Image" style="width: 600px; display: block; margin: 20px auto 0;">
+        <img src="https://md.ua/storage/editor/fotos/a4ede478cddde6800aa6fd2b6cabf704.jpg" alt="Image" style="width: 600px; display: block; margin: 20px auto 0;">
+        <p>Ольга Руднєва, Олена Вдовиченко та Олексій Волошин в рамках дискусійній панелі "Інклюзивність" підняли надважливу тему сьогодення, як інтегрувати Суперлюдину в заклади ресторанної індустрії, щоб вона почувалась комфортно.</p>
+        <p>
+            Також, SALT: Restaurant Innovation Conference підтримали соціальну ініціативу Superhumans Center, перевівши туди частину свого прибутку отриманого з продажу квитків.
+        </p>
+    </div>
+    <div style="height: 30px;"></div>
+
+    <footer>
+        © 2024 - Rivne Restaurants || Karyna, Dasha and Vova Web-Programming Corporation
+    </footer>
+</body>
+
+
