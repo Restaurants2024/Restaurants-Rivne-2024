@@ -1,88 +1,38 @@
-﻿
+﻿@model List<News>
 <h1>@ViewData["Title"]</h1>
 <main>
+    
     <!-- ALBUM DESCRIPTION -->
     <div class="album-description container-fluid text-white" style="background-color: #4682B4;">
-        <h1 id="title-1" class="special-title-3">NEWS</h1>
-        <h2 id="title-2" class="special-title-3">SPECIALS &amp; EVENTS</h2>
+        <h1 class="title-3">NEWS</h1>
+        <h2 class="title-3">SPECIALS &amp; EVENTS</h2>
     </div>
 
-    <!-- ALBUM CONTENT -->
-    <div class="homepage-special-offers container">
-        <h3 class="special-title-2 text-center">Hurry Up</h3>
-    </div>
+    
     <div class="album-content">
         <div class="container">
             <div class="row">
-                <div id="card-food" class="col-md-4">
-                    <div class="card box-shadow">
-                        <img class="card-img-top" srcset="https://tomato.ua/storage/restaurants/5bbb676174f65600462a6b97/17043772046596bb74537fa_6596bb2b697694.86957523.jpeg">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">Live music</h3>
-                            <p class="card-text">
-                                Жива музика в ресторані SHEF кожну Пт та Сб
-                                Вирушайте у мандрівку у світ музичної насолоди та смачної кухні разом з SHEF😍
-
-                                Кожної п’ятниці та суботи ми чекаємо на Вас з живою музикою та ідеальною атмосферою🤩.
-                            </p>
-                            <a asp-controller="News" asp-action="NewsFood" class="btn btn-outline-dark" role="button">View</a>
+                @foreach (var news in Model)
+                {
+                    <div id="card-food" class="col-md-4">
+                        <div class="card box-shadow">
+                            <img class="card-img-top" src="data:image/jpeg;base64,@Convert.ToBase64String(news.Photo)" alt="@news.Title" />
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold"> @news.Title </h5>
+                                <p class="card-text">
+                                    @news.ShortDescription
+                                </p>
+                                <a asp-controller="News" asp-action="Details" asp-route-id="@news.Id" class="btn btn-outline-dark" role="button">View</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="card-desserts" class="col-md-4">
-                    <div class="card box-shadow">
-                        <img class="card-img-top" srcset="https://barmushly.com.ua/wp-content/uploads/sites/6/2021/02/1.-plato-gryl-4-scaled-e1612172050568.jpg" style=" height: 276px">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">Unlimіted food</h3>
-                            <p class="card-text">
-                                Окуніться в кулінарну подорож кожної неділі з безлімітним SEAFOOD BRUNCH у Forrest Club, який стартує 14 квітня...
-                            </p>
-                            <a asp-controller="News" asp-action="NewsDesserts" class="btn btn-outline-dark" role="button">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="card-drinks" class="col-md-4">
-                    <div class="card box-shadow">
-                        <img class="card-img-top" srcset="https://reston.ua/images/img/salt_kyiv_649_03_11_2023_2.jpg">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">Restaurant event</h3>
-                            <p class="card-text">
-                                30 жовтня у КВЦ "Парковий" відбувся захід "SALT: Restaurant Innovation Conference" від HOTELIERO про сучасні ресторанні тенденції та інновації, який відвідало понад 500-та гостей.
-                            </p>
-                            <a asp-controller="News" asp-action="NewsDrinks" class="btn btn-outline-dark" role="button">View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div id="card-location" class="col-md-4">
-                    <div class="card box-shadow">
-                        <img class="card-img-top" srcset="https://radiotrek.rv.ua/uploads/media/b7/f7/b7f760a22d9f95800f55dbefe92278f8_w640.jpg">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">Pizza based on an AI recipe</h3>
-                            <p class="card-text">
-                                Ресторани української мережі 1708 Pizza dі Napoli готують піцу за рецептом штучного інтелекту.
-                            </p>
-                            <a asp-controller="News" asp-action="NewsLocation" class="btn btn-outline-dark" role="button">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="card-staff" class="col-md-4">
-                    <div class="card box-shadow">
-                        <img class="card-img-top" srcset="https://img.freepik.com/premium-photo/dog-with-glass-beer-his-head-sits-table_888396-1028.jpg">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">Beer for dogs</h3>
-                            <p class="card-text">
-                                Тепер у пивному барі Kyiv Local Bar: є чизбургери й пиво для собак.
-                            </p>
-                            <a asp-controller="News" asp-action="NewsStaff" class="btn btn-outline-dark" role="button">View</a>
-                        </div>
-                    </div>
-                </div>
+                }
+               
             </div>
         </div>
     </div>
 </main>
-<form id="newsletter-form">
-</form>
+@section Styles {
+    <link rel="stylesheet" href="~/css/news.css" />
+}
 

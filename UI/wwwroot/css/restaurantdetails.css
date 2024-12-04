@@ -1,0 +1,130 @@
+/* Основний контейнер */
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.85); /* Напівпрозорий фон */
+    border-radius: 15px; /* Округлення країв */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тінь */
+}
+
+/* Фон */
+body {
+    margin: 0;
+    background: url('https://bogatyr.club/uploads/posts/2023-06/thumbs/1686964527_bogatyr-club-p-kafe-zadnii-fon-pinterest-10.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #4b3832;
+    overflow-x: hidden;
+}
+
+    /* Розмиття фону */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        filter: blur(10px);
+        z-index: -1;
+    }
+
+/* Стиль для кнопки Back */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #a6a6a6;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+    .back-btn:hover {
+        background-color: #9b9b9b;
+    }
+
+    .back-btn svg {
+        margin-right: 10px;
+    }
+
+/* Контейнер для зображення та тексту */
+.image-text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+    .image-text-container img {
+        width: 450px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тінь навколо зображення */
+    }
+
+/* Заголовки та текст */
+.text-content {
+    flex: 1;
+}
+
+h3 {
+    color: #333;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Стиль для footer */
+footer {
+    background-color: white;
+    color: #555;
+    text-align;
+    padding: 0px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    footer a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Адаптивність */
+media (max-width: 768px) {
+    .image-text-container
+
+{
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-text-container img {
+    max-width: 100%;
+}
+
+.text-content {
+    text-align: center;
+}
+}
+ 
+
+

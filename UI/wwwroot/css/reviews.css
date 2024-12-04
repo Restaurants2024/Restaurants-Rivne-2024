@@ -1,0 +1,10 @@
+.stars {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+    .stars .star:hover,
+    .stars .star.selected {
+        color: gold;
+    }

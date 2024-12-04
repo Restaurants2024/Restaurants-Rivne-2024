@@ -1,172 +1,53 @@
-﻿<!DOCTYPE html>
+﻿@model List<Restaurant>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-    <style>
-        /* Фон для сторінки */
-        body {
-            color: #333;
-            
-        }
-
-        /* Основний контейнер для ресторанів */
-        .restaurant-container {
-            margin: 20px auto;
-            max-width: 1200px;
-            padding: 20px;
-        }
-
-        .restaurant-card {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px; /* Відстань між ресторанами */
-        }
-
-            .restaurant-card img {
-                width: 300px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
-
-        .restaurant-info {
-            flex: 1;
-            text-align: left;
-        }
-
-            .restaurant-info h2 {
-                font-size: 24px;
-                margin-bottom: 10px;
-                font-weight: 700;
-            }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-
-            .rating span {
-                font-size: 20px;
-                color: gold;
-            }
-
-        .admin-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn-admin {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-            .btn-admin:hover {
-                background-color: #0056b3;
-            }
-
-        .btn-reviews {
-            background-color: #ff9900;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-            .btn-reviews:hover {
-                background-color: #cc7a00;
-            }
-
-        /* Заголовок */
-        h1 {
-            font-size: 36px;
-            font-weight: bold;
-            color: #444;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 28px;
-            color: #555;
-        }
-
-
-        
-        
-    </style>
+ 
 </head>
 <body>
-    <!-- ALBUM DESCRIPTION -->
-    <div class="page-container" style="text-align: center;">
-        <h1>NEWS</h1>
-        <h2>SPECIALS &amp; EVENTS</h2>
-    </div>
-
-        
-
-        <!-- Контейнер для ресторанів -->
-        <div class="restaurant-container">
-            <!-- Ресторан 1 -->
-            <div class="restaurant-card">
-                <img src="https://via.placeholder.com/300x200" alt="Фото ресторану">
-                <div class="restaurant-info">
-                    <h2>Мацурі</h2>
-                    <div class="rating">
-                        <span>⭐ 4.9</span>
-                        <small>(120 відгуків)</small>
-                    </div>
-                    <p>Короткий опис ресторану. Тут можна описати атмосферу, тип кухні тощо.</p>
-                    <div class="contact-info">
-                        <p><strong>Корисні посилання:</strong> <a href="#">Сайт ресторану</a></p>
-                        <p><strong>Номер телефону:</strong> +380 67 123 45 67</p>
-                    </div>
-                    <p><strong>Адреса:</strong> вул. Центральна, 10</p>
-                    <a href="/Reviews/Matsuri" class="btn-reviews">Переглянути відгуки</a>
-                </div>
-            </div>
-
-            <!-- Ресторан 2 -->
-            <div class="restaurant-card">
-                <img src="https://via.placeholder.com/300x200" alt="Фото ресторану">
-                <div class="restaurant-info">
-                    <h2>Токіо</h2>
-                    <div class="rating">
-                        <span>⭐ 4.7</span>
-                        <small>(85 відгуків)</small>
-                    </div>
-                    <p>Короткий опис ресторану. Смачна кухня з акцентом на японські страви.</p>
-                    <div class="contact-info">
-                        <p><strong>Корисні посилання:</strong> <a href="#">Сайт ресторану</a></p>
-                        <p><strong>Номер телефону:</strong> +380 68 765 43 21</p>
-                    </div>
-                    <p><strong>Адреса:</strong> вул. Квітнева, 12</p>
-                    <a href="/Reviews/Tokyo" class="btn-reviews">Переглянути відгуки</a>
-                </div>
-            </div>
-
-            <!-- Адмін-секція -->
-            <div class="admin-section">
-                <button class="btn-admin">Внести зміни</button>
-            </div>
+    <!-- Смуга з текстом -->
+    <div class="highlight-bar">
+        <img src="/media/Rating/logo.png" alt="Логотип сайту">
+        <div>
+            <h1>РЕЙТИНГ РЕСТОРАНІВ</h1>
+            <h2>Обирайте серед найкращих закладів та насолоджуйтесь чудовою кухнею</h2>
         </div>
     </div>
+
+    <!-- Контейнер для ресторанів -->
+    <div class="restaurant-container">
+        <!-- Ресторан 1 -->
+        @foreach (var restaurant in Model)
+        {
+            <div class="restaurant-card">
+                <img class="card-img-top" src="data:image/jpeg;base64,@Convert.ToBase64String(restaurant.Photo)" alt="" />
+                <div class="restaurant-info">
+                    <h2>@restaurant.Title</h2>
+                    <div class="rating">
+                        <span>⭐ @restaurant.Stars</span>
+                        <small>(85 відгуків)</small>
+                    </div>
+                    <p>@restaurant.DescriptionRating</p>
+                    <div class="contact-info">
+                        <p><strong>Корисні посилання:</strong> <a href="@restaurant.LinksRating" target="_blank">Переглянути</a></p>
+                        <p><strong>Номер телефону:</strong> @restaurant.TelNum</p>
+                    </div>
+                    <p><strong>Адреса:</strong>@restaurant.Address</p>
+                    <a asp-controller="Rating" asp-action="Details" asp-route-id="@restaurant.Id"class="btn-reviews">Переглянути відгуки</a>
+                </div>
+            </div>  
+                    
+        }
+
+        <!-- Адмін-секція -->
+        <div class="admin-section">
+            <button class="btn-admin">Внести зміни</button>
+        </div>
+    </div>
+    
 </body>
 </html>
+@section Styles {
+    <link rel="stylesheet" href="~/css/rating.css" />
+}
+

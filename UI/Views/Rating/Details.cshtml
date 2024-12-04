@@ -1,0 +1,19 @@
+﻿
+@model List<Feedback>
+
+
+@foreach (var feedback in Model)
+{
+    @if (feedback.Restaurant != null)
+    {
+        <img class="card-img-top" src="data:image/jpeg;base64,@Convert.ToBase64String(feedback.Restaurant.Photo)" alt="" />
+
+        <h5 class="card-title font-weight-bold"> @feedback.Text </h5>
+
+
+
+        <a asp-controller="News" asp-action="Details" asp-route-id="@feedback.Id" class="btn btn-outline-dark" role="button">View</a>
+    }
+    
+
+}

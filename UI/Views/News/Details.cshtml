@@ -1,0 +1,45 @@
+﻿@model News
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@Model.Title</title>
+
+</head>
+<body>
+
+	<div class="container-custom">
+		<!-- Кнопка Back -->
+		<a asp-action="Index" class="back-btn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+			</svg>
+
+		</a>
+
+		
+			@* Блок із фотографією та текстом *@
+		<div class="details-container @(ViewData["ShowPhoto"] != null && (bool)ViewData["ShowPhoto"] ? "show-photo" : "hide-photo")">
+				@if (ViewData["ShowPhoto"] != null && (bool)ViewData["ShowPhoto"])
+
+				{
+					<div class="photo">
+						<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.Photo)}")" alt="News Image" />
+					</div>
+				}
+			<p><strong>Дата опублікування:</strong> @Model.Date.ToString("dd.MM.yyyy")</p>
+			<h1>@Model.TitleBox</h1>
+			<p>@Html.Raw(Model.Description)</p>
+			
+	    </div>
+
+	
+	</div>
+	<div style="height: 60px;"></div>
+</body>
+</html>
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/newsdetails.css" />
+}
