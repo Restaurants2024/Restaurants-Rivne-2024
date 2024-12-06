@@ -73,8 +73,7 @@ namespace UI.Data
 					FavoriteLinks = "https://grill-bar-dvir.choiceqr.com/",
 					ShortDescription = "Gusto - це авторські страви свропейської та японської кухні з унікальним методом приготування. Це ексклюзивна алкогольна карта та меню авторських і класичних коктейлів. Це кайкращі рецепти домашніх десертів зібрані з різних куточки світу.",
 					Stars = 5,
-					WorkSchedule = " Пн.–Пт.: з 11:00 до 24:00 " +
-														   "Сб., Нд.: з 12:00 до 24:00",
+					WorkSchedule = " Пн.–Пт.: з 11:00 до 24:00 Сб., Нд.: з 12:00 до 24:00",
 					DescriptionRating = "Gusto - це більше ніж кафе,це інакше ніж ресторан.",
 					LinksRating = "https://www.gusto.rv.ua",
 					Photo = File.ReadAllBytes("wwwroot/media/restaurants/gusto.jpg")
@@ -213,9 +212,12 @@ namespace UI.Data
 
 			// Додавання тестових користувачів
 			modelBuilder.Entity<Person>().HasData(
-				new Person { Id = "1", UserName = "user1", Email = "user1@example.com", Surname = "Doe", Name = "John", ThirdName = "Smith", NormalizedUserName = "USER1", NormalizedEmail = "USER1@EXAMPLE.COM", PasswordHash = "testpasswordhash" },
-				new Person { Id = "2", UserName = "user2", Email = "user2@example.com", Surname = "Smith", Name = "Jane", ThirdName = "Doe", NormalizedUserName = "USER2", NormalizedEmail = "USER2@EXAMPLE.COM", PasswordHash = "testpasswordhash" }
-			);
+				new Person { Id = "1", UserName = "user1", Email = "user1@example.com", Surname = "Власюк", Name = "Іван", ThirdName = "Іванович", NormalizedUserName = "USER1", NormalizedEmail = "USER1@EXAMPLE.COM", PasswordHash = "testpasswordhash" },
+				new Person { Id = "2", UserName = "user2", Email = "user2@example.com", Surname = "Андрощук", Name = "Олена", ThirdName = "Петрівна", NormalizedUserName = "USER2", NormalizedEmail = "USER2@EXAMPLE.COM", PasswordHash = "testpasswordhash" },
+                new Person { Id = "3", UserName = "user3", Email = "user3@example.com", Surname = "Яценюк", Name = "Андрій", ThirdName = "Володимирович", NormalizedUserName = "USER3", NormalizedEmail = "USER3@EXAMPLE.COM", PasswordHash = "testpasswordhash" },
+                new Person { Id = "4", UserName = "user4", Email = "user4@example.com", Surname = "Кучма", Name = "Микола", ThirdName = "Генадійович", NormalizedUserName = "USER4", NormalizedEmail = "USER4@EXAMPLE.COM", PasswordHash = "testpasswordhash" },
+                new Person { Id = "5", UserName = "user5", Email = "user5@example.com", Surname = "Дорошенко", Name = "Олександр", ThirdName = "Федорович", NormalizedUserName = "USER5", NormalizedEmail = "USER5@EXAMPLE.COM", PasswordHash = "testpasswordhash" }
+            );
 
 			// Додавання тестових бронювань
 			modelBuilder.Entity<Booking>().HasData(
@@ -225,9 +227,33 @@ namespace UI.Data
 
 			// Додавання тестових відгуків
 			modelBuilder.Entity<Feedback>().HasData(
-				new Feedback { Id = 1, Text = "Great food!", TableNum = 1, Date = DateTime.Now.AddDays(-1), RestaurantId = 1, PersonId = "1" },
-				new Feedback { Id = 2, Text = "Nice ambiance!", TableNum = 2, Date = DateTime.Now.AddDays(-2), RestaurantId = 2, PersonId = "2" }
-			);
+				new Feedback { Id = 1, Text = "Ресторан \"Father\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!", Date = DateTime.Now.AddDays(-1), RestaurantId = 2, PersonId = "1" },
+                new Feedback { Id = 2, Text = "У \"Father\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!", Date = DateTime.Now.AddDays(-2), RestaurantId = 2, PersonId = "2" },
+                new Feedback { Id = 3, Text = "\"Father\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!!", Date = DateTime.Now.AddDays(-3), RestaurantId = 2, PersonId = "3" },
+                new Feedback { Id = 4, Text = "\"Father\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні.", Date = DateTime.Now.AddDays(-4), RestaurantId = 2, PersonId = "4" },
+                new Feedback { Id = 5, Text = "\"Father\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею.", Date = DateTime.Now.AddDays(-5), RestaurantId = 2, PersonId = "5" },
+                new Feedback { Id = 6, Text = "Ресторан \"Fortissimo\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!", Date = DateTime.Now.AddDays(-6), RestaurantId = 3, PersonId = "1" },
+                new Feedback { Id = 7, Text = "У \"Fortissimo\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!", Date = DateTime.Now.AddDays(-7), RestaurantId = 3, PersonId = "2" },
+                new Feedback { Id = 8, Text = "\"Fortissimo\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!", Date = DateTime.Now.AddDays(-8), RestaurantId = 3, PersonId = "3" },
+                new Feedback { Id = 9, Text = "\"Fortissimo\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні.", Date = DateTime.Now.AddDays(-9), RestaurantId = 3, PersonId = "4" },
+                new Feedback { Id = 10, Text = "\"Fortissimo\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею.", Date = DateTime.Now.AddDays(-10), RestaurantId = 3, PersonId = "5" },
+                new Feedback { Id = 11, Text = "Ресторан \"Nеw York Strееt Pіzzа\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.", Date = DateTime.Now.AddDays(-11), RestaurantId = 4, PersonId = "1" },
+                new Feedback { Id = 12, Text = "У \"Nеw York Strееt Pіzzа\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!", Date = DateTime.Now.AddDays(-12), RestaurantId = 4, PersonId = "2" },
+                new Feedback { Id = 13, Text = "\"Nеw York Strееt Pіzzа\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!!", Date = DateTime.Now.AddDays(-13), RestaurantId = 4, PersonId = "3" },
+                new Feedback { Id = 14, Text = "\"Nеw York Strееt Pіzzа\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні!", Date = DateTime.Now.AddDays(-14), RestaurantId = 4, PersonId = "4" },
+                new Feedback { Id = 15, Text = "\"Nеw York Strееt Pіzzа\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею.", Date = DateTime.Now.AddDays(-15), RestaurantId = 4, PersonId = "5" },
+                new Feedback { Id = 16, Text = "Ресторан \"Grill&Bar DVIR\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.", Date = DateTime.Now.AddDays(-16), RestaurantId = 5, PersonId = "1" },
+                new Feedback { Id = 17, Text = "У \"Grill&Bar DVIR\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!", Date = DateTime.Now.AddDays(-17), RestaurantId = 5, PersonId = "2" },
+                new Feedback { Id = 18, Text = "\"Grill&Bar DVIR\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!", Date = DateTime.Now.AddDays(-18), RestaurantId = 5, PersonId = "3" },
+                new Feedback { Id = 19, Text = "\"Grill&Bar DVIR\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні.", Date = DateTime.Now.AddDays(-19), RestaurantId = 5, PersonId = "4" },
+                new Feedback { Id = 20, Text = "\"Grill&Bar DVIR\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею.", Date = DateTime.Now.AddDays(-20), RestaurantId = 5, PersonId = "5" },
+                 new Feedback { Id = 21, Text = "Ресторан \"Gusto gastro salon\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!", Date = DateTime.Now.AddDays(-21), RestaurantId = 1, PersonId = "1" },
+                new Feedback { Id = 22, Text = "У \"Gusto gastro salon\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!", Date = DateTime.Now.AddDays(-22), RestaurantId = 1, PersonId = "2" },
+                new Feedback { Id = 23, Text = "\"Gusto gastro salon\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!", Date = DateTime.Now.AddDays(-23), RestaurantId = 1, PersonId = "3" },
+                new Feedback { Id = 24, Text = "\"Gusto gastro salon\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні.", Date = DateTime.Now.AddDays(-24), RestaurantId = 1, PersonId = "4" },
+                new Feedback { Id = 25, Text = "\"Gusto gastro salon\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею.", Date = DateTime.Now.AddDays(-25), RestaurantId = 1, PersonId = "5" }
+
+            );
 
 
 

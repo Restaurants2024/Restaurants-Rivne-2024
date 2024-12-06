@@ -1,19 +1,51 @@
-﻿
-@model List<Feedback>
+﻿@model List<Feedback>
+<!DOCTYPE html>
+<html lang="uk">
+
+<body>
+	<!-- Смуга з текстом -->
+	<div class="highlight-bar">
+		<img src="/media/Rating/logo.png" alt="Логотип сайту">
+		<div>
+			<h1>ВІДГУКИ</h1>
+			<h2>Читайте думки клієнтів про наші найкращі ресторани</h2>
+		</div>
+	</div>
+
+	<!-- Контейнер для відгуків -->
+	<div class="reviews-container">
+		<!-- Кнопка "Назад" -->
+		<a asp-action="Index" class="back-btn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+			</svg>
+			Назад
+		</a>
+
+		@foreach (var feedback in Model)
+		{
+			@if (feedback.Restaurant != null)
+			{
+				<div class="review-card">
+					<h3>@feedback.Person.Name @feedback.Person.Surname</h3>
+					<div class="rating">⭐ 5.0</div>
+					<p>@feedback.Text</p>
+					<div class="review-meta">Дата: @feedback.Date</div>
+				</div>
+			}
 
 
-@foreach (var feedback in Model)
-{
-    @if (feedback.Restaurant != null)
-    {
-        <img class="card-img-top" src="data:image/jpeg;base64,@Convert.ToBase64String(feedback.Restaurant.Photo)" alt="" />
+		}
+	</div>
+</body>
+</html>
 
-        <h5 class="card-title font-weight-bold"> @feedback.Text </h5>
-
-
-
-        <a asp-controller="News" asp-action="Details" asp-route-id="@feedback.Id" class="btn btn-outline-dark" role="button">View</a>
-    }
-    
-
+@section Styles {
+	<link rel="stylesheet" href="~/css/ratingdetails.css" />
 }
+
+
+
+
+
+

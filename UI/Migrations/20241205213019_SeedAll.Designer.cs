@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UI.Data;
 
@@ -11,9 +12,11 @@ using UI.Data;
 namespace UI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241205213019_SeedAll")]
+    partial class SeedAll
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,7 +195,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 12, 7, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(897),
+                            Date = new DateTime(2024, 12, 6, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(173),
                             PersonId = "1",
                             RestaurantId = 1,
                             TableNum = 1
@@ -200,7 +203,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 12, 8, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(984),
+                            Date = new DateTime(2024, 12, 7, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(250),
                             PersonId = "2",
                             RestaurantId = 2,
                             TableNum = 2
@@ -241,7 +244,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 12, 5, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1035),
+                            Date = new DateTime(2024, 12, 4, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1302),
                             PersonId = "1",
                             RestaurantId = 2,
                             Text = "Ресторан \"Father\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!"
@@ -249,7 +252,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 12, 4, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1042),
+                            Date = new DateTime(2024, 12, 3, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1312),
                             PersonId = "2",
                             RestaurantId = 2,
                             Text = "У \"Father\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!"
@@ -257,7 +260,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2024, 12, 3, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1045),
+                            Date = new DateTime(2024, 12, 2, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1314),
                             PersonId = "3",
                             RestaurantId = 2,
                             Text = "\"Father\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!!"
@@ -265,7 +268,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2024, 12, 2, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1048),
+                            Date = new DateTime(2024, 12, 1, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1319),
                             PersonId = "4",
                             RestaurantId = 2,
                             Text = "\"Father\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні."
@@ -273,7 +276,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 5,
-                            Date = new DateTime(2024, 12, 1, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1050),
+                            Date = new DateTime(2024, 11, 30, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1321),
                             PersonId = "5",
                             RestaurantId = 2,
                             Text = "\"Father\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею."
@@ -281,7 +284,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 6,
-                            Date = new DateTime(2024, 11, 30, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1053),
+                            Date = new DateTime(2024, 11, 29, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1323),
                             PersonId = "1",
                             RestaurantId = 3,
                             Text = "Ресторан \"Fortissimo\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!"
@@ -289,7 +292,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 7,
-                            Date = new DateTime(2024, 11, 29, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1056),
+                            Date = new DateTime(2024, 11, 28, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1324),
                             PersonId = "2",
                             RestaurantId = 3,
                             Text = "У \"Fortissimo\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!"
@@ -297,7 +300,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 8,
-                            Date = new DateTime(2024, 11, 28, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1058),
+                            Date = new DateTime(2024, 11, 27, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1326),
                             PersonId = "3",
                             RestaurantId = 3,
                             Text = "\"Fortissimo\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!"
@@ -305,7 +308,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 9,
-                            Date = new DateTime(2024, 11, 27, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1061),
+                            Date = new DateTime(2024, 11, 26, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1328),
                             PersonId = "4",
                             RestaurantId = 3,
                             Text = "\"Fortissimo\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні."
@@ -313,7 +316,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 10,
-                            Date = new DateTime(2024, 11, 26, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1063),
+                            Date = new DateTime(2024, 11, 25, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1330),
                             PersonId = "5",
                             RestaurantId = 3,
                             Text = "\"Fortissimo\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею."
@@ -321,7 +324,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 11,
-                            Date = new DateTime(2024, 11, 25, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1066),
+                            Date = new DateTime(2024, 11, 24, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1332),
                             PersonId = "1",
                             RestaurantId = 4,
                             Text = "Ресторан \"Nеw York Strееt Pіzzа\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена."
@@ -329,7 +332,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 12,
-                            Date = new DateTime(2024, 11, 24, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1069),
+                            Date = new DateTime(2024, 11, 23, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1334),
                             PersonId = "2",
                             RestaurantId = 4,
                             Text = "У \"Nеw York Strееt Pіzzа\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!"
@@ -337,7 +340,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 13,
-                            Date = new DateTime(2024, 11, 23, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1084),
+                            Date = new DateTime(2024, 11, 22, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1336),
                             PersonId = "3",
                             RestaurantId = 4,
                             Text = "\"Nеw York Strееt Pіzzа\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!!"
@@ -345,7 +348,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 14,
-                            Date = new DateTime(2024, 11, 22, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1087),
+                            Date = new DateTime(2024, 11, 21, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1338),
                             PersonId = "4",
                             RestaurantId = 4,
                             Text = "\"Nеw York Strееt Pіzzа\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні!"
@@ -353,7 +356,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 15,
-                            Date = new DateTime(2024, 11, 21, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1089),
+                            Date = new DateTime(2024, 11, 20, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1340),
                             PersonId = "5",
                             RestaurantId = 4,
                             Text = "\"Nеw York Strееt Pіzzа\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею."
@@ -361,7 +364,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 16,
-                            Date = new DateTime(2024, 11, 20, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1092),
+                            Date = new DateTime(2024, 11, 19, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1342),
                             PersonId = "1",
                             RestaurantId = 5,
                             Text = "Ресторан \"Grill&Bar DVIR\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена."
@@ -369,7 +372,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 17,
-                            Date = new DateTime(2024, 11, 19, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1094),
+                            Date = new DateTime(2024, 11, 18, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1344),
                             PersonId = "2",
                             RestaurantId = 5,
                             Text = "У \"Grill&Bar DVIR\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!"
@@ -377,7 +380,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 18,
-                            Date = new DateTime(2024, 11, 18, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1097),
+                            Date = new DateTime(2024, 11, 17, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1345),
                             PersonId = "3",
                             RestaurantId = 5,
                             Text = "\"Grill&Bar DVIR\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!"
@@ -385,7 +388,7 @@ namespace UI.Migrations
                         new
                         {
                             Id = 19,
-                            Date = new DateTime(2024, 11, 17, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1100),
+                            Date = new DateTime(2024, 11, 16, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1347),
                             PersonId = "4",
                             RestaurantId = 5,
                             Text = "\"Grill&Bar DVIR\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні."
@@ -393,50 +396,10 @@ namespace UI.Migrations
                         new
                         {
                             Id = 20,
-                            Date = new DateTime(2024, 11, 16, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1102),
+                            Date = new DateTime(2024, 11, 15, 23, 30, 19, 564, DateTimeKind.Local).AddTicks(1350),
                             PersonId = "5",
                             RestaurantId = 5,
                             Text = "\"Grill&Bar DVIR\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею."
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Date = new DateTime(2024, 11, 15, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1105),
-                            PersonId = "1",
-                            RestaurantId = 1,
-                            Text = "Ресторан \"Gusto gastro salon\" перевершив всі мої очікування! Атмосфера чудова, кухня неперевершена.!"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Date = new DateTime(2024, 11, 14, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1107),
-                            PersonId = "2",
-                            RestaurantId = 1,
-                            Text = "У \"Gusto gastro salon\" затишно і смачно, але ціни трохи вищі, ніж очікувалося. Загалом сподобалося!"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Date = new DateTime(2024, 11, 13, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1110),
-                            PersonId = "3",
-                            RestaurantId = 1,
-                            Text = "\"Gusto gastro salon\" - ідеальне місце для тих, хто хоче швидко і смачно перекусити. Рекомендую!"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Date = new DateTime(2024, 11, 12, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1112),
-                            PersonId = "4",
-                            RestaurantId = 1,
-                            Text = "\"Gusto gastro salon\" має чудову атмосферу, але обслуговування могло б бути кращим. Їжа на високому рівні."
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Date = new DateTime(2024, 11, 11, 12, 12, 11, 685, DateTimeKind.Local).AddTicks(1115),
-                            PersonId = "5",
-                            RestaurantId = 1,
-                            Text = "\"Gusto gastro salon\" - це любов з першого погляду. Ресторан із чудовою атмосферою та відмінною кухнею."
                         });
                 });
 
@@ -619,7 +582,7 @@ namespace UI.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1eac38a4-da1d-4dcf-bba0-8dbe095a73e2",
+                            ConcurrencyStamp = "54a534dc-972a-4448-be64-bb1c931b0bbf",
                             Email = "user1@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -628,7 +591,7 @@ namespace UI.Migrations
                             NormalizedUserName = "USER1",
                             PasswordHash = "testpasswordhash",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1fae3275-0b6b-4cc5-92aa-55a00aca6bcd",
+                            SecurityStamp = "dee07582-2c1f-4e5c-9df9-f1a6226fe3b1",
                             Surname = "Власюк",
                             ThirdName = "Іванович",
                             TwoFactorEnabled = false,
@@ -638,7 +601,7 @@ namespace UI.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a0dddf2c-73a5-4366-8b61-ac2902f39109",
+                            ConcurrencyStamp = "2b3079c7-bbb6-4354-9c3a-e6542feb1a77",
                             Email = "user2@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -647,7 +610,7 @@ namespace UI.Migrations
                             NormalizedUserName = "USER2",
                             PasswordHash = "testpasswordhash",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ead1a877-f20a-442e-b987-5679d4e64b14",
+                            SecurityStamp = "8f9a4431-4b78-467c-b81f-9d883b9ede2e",
                             Surname = "Андрощук",
                             ThirdName = "Петрівна",
                             TwoFactorEnabled = false,
@@ -657,7 +620,7 @@ namespace UI.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "baf8cb20-7291-4ebc-b67a-f3bd7c583245",
+                            ConcurrencyStamp = "879b437e-dff9-4a75-97b8-faba40ab513f",
                             Email = "user3@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -666,7 +629,7 @@ namespace UI.Migrations
                             NormalizedUserName = "USER3",
                             PasswordHash = "testpasswordhash",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a3ca6431-30c1-48f0-9437-fbe399230da8",
+                            SecurityStamp = "b5b26c15-e7b8-4f69-8b73-9afadc19e73d",
                             Surname = "Яценюк",
                             ThirdName = "Володимирович",
                             TwoFactorEnabled = false,
@@ -676,7 +639,7 @@ namespace UI.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9a4032b0-2e60-4143-942f-44a28e63ca42",
+                            ConcurrencyStamp = "4cad1d88-860f-42c5-a1e4-fbd75fa4eda9",
                             Email = "user4@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -685,7 +648,7 @@ namespace UI.Migrations
                             NormalizedUserName = "USER4",
                             PasswordHash = "testpasswordhash",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bed01789-b99f-4ed5-af21-3f21dc189271",
+                            SecurityStamp = "4faee1a9-95b2-4de4-939e-3dfcc7c4e903",
                             Surname = "Кучма",
                             ThirdName = "Генадійович",
                             TwoFactorEnabled = false,
@@ -695,7 +658,7 @@ namespace UI.Migrations
                         {
                             Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1f6f3c95-4070-40a2-9326-5584c10541f4",
+                            ConcurrencyStamp = "cb1f2044-2eaf-4cd8-97fc-31153508a93e",
                             Email = "user5@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -704,7 +667,7 @@ namespace UI.Migrations
                             NormalizedUserName = "USER5",
                             PasswordHash = "testpasswordhash",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3064adc8-e88c-433e-b5ec-e612786fd564",
+                            SecurityStamp = "3807824c-d9e4-40f5-8a39-ddd3e0945801",
                             Surname = "Дорошенко",
                             ThirdName = "Федорович",
                             TwoFactorEnabled = false,

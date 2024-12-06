@@ -1,9 +1,8 @@
 /* Фон для сторінки */
 body {
     background: url('/media/Rating/background.png') no-repeat center center fixed;
-    background-size: cover; /* Зображення покриває весь фон */
+    background-size: cover;
     color: #333;
-    font-family: 'Arial', sans-serif;
 }
 
 footer {

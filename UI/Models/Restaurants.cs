@@ -8,6 +8,7 @@ namespace UI.Models
         public int Id { get; set; }
         public double PointX { get; set; }
         public double PointY { get; set; }
+
         public string Title { get; set; }
         public byte[] Photo { get; set; }
         public int Stars { get; set; }

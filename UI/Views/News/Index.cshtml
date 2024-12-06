@@ -7,7 +7,18 @@
         <h1 class="title-3">NEWS</h1>
         <h2 class="title-3">SPECIALS &amp; EVENTS</h2>
     </div>
-
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="text-right mb-3">
+            <a asp-controller="News" asp-action="Create" class="btn btn-success">Добавити новину</a>
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
     
     <div class="album-content">
         <div class="container">
@@ -23,6 +34,25 @@
                                     @news.ShortDescription
                                 </p>
                                 <a asp-controller="News" asp-action="Details" asp-route-id="@news.Id" class="btn btn-outline-dark" role="button">View</a>
+                                @if (TempData["ErrorMessage"] != null)
+
+                                {
+                                    <div class="alert alert-danger">
+                                        @TempData["ErrorMessage"]
+                                    </div>
+                                }
+
+                                @if (User.IsInRole("Admin"))
+
+                                {
+                                    <!-- Посилання на редагування (лише для Admin) -->
+                                    <a asp-controller="News" asp-action="Edit" asp-route-id="@news.Id" class="btn btn-warning" role="button">Edit</a>
+
+                                    <!-- Кнопка видалення (лише для Admin) -->
+                                    <form asp-controller="News" asp-action="Delete" asp-route-id="@news.Id" method="post" onsubmit="return confirm('Ви впевнені, що хочете видалити цю новину?');" style="display:inline;">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                }
                             </div>
                         </div>
                     </div>
