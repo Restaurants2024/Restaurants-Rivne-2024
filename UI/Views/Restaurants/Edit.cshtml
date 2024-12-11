@@ -1,0 +1,55 @@
+﻿@model UI.Models.Restaurant
+
+<h1>Редагувати ресторан</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Title">Назва ресторану</label>
+        <input type="text" class="form-control" id="Title" name="Title" asp-for="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ShortDescription">Короткий опис</label>
+        <textarea class="form-control" id="ShortDescription" name="ShortDescription" asp-for="ShortDescription"></textarea>
+        <span asp-validation-for="ShortDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Детальний опис</label>
+        <textarea class="form-control" id="Description" name="Description" asp-for="Description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Stars">Кількість зірок</label>
+        <input type="number" class="form-control" id="Stars" name="Stars" asp-for="Stars" min="0" max="5" />
+    </div>
+
+    <div class="form-group">
+        <label for="WorkSchedule">Графік роботи</label>
+        <input type="text" class="form-control" id="WorkSchedule" name="WorkSchedule" asp-for="WorkSchedule" />
+    </div>
+
+    <div class="form-group">
+        <label for="TelNum">Номер телефону</label>
+        <input type="text" class="form-control" id="TelNum" name="TelNum" asp-for="TelNum" />
+    </div>
+
+    <div class="form-group">
+        <label for="Address">Адреса</label>
+        <input type="text" class="form-control" id="Address" name="Address" asp-for="Address" />
+    </div>
+
+    <div class="form-group">
+        <label for="Photo">Фото</label>
+        <input type="file" class="form-control-file" id="Photo" name="Photo" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Зберегти</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

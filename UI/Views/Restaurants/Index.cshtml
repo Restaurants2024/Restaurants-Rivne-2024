@@ -1,0 +1,68 @@
+﻿@model List<Restaurant>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="album-description container-fluid text-black">
+    <link rel="stylesheet" href="styles.css">
+    <h1 class="title-3">RESTAURANTS</h1>
+    <h2 class="title-3">ТУТ ЗНАХОДЯТЬСЯ ВСІ РЕСТОРАНИ</h2>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-right mb-3">
+        <a asp-controller="Restaurants" asp-action="Create" class="btn btn-success">Додати ресторан</a>
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- ALBUM CONTENT -->
+<div class="album-content">
+    <div class="container">
+        <div class="row">
+            @foreach (var restaurant in Model)
+            {
+                <div id="card-food" class="col-md-4">
+                    <div class="card box-shadow">
+                        <img class="card-img-top" src="@(restaurant.Photo != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(restaurant.Photo)}" : "~/images/default.jpg")" alt="@restaurant.Title" />
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Ресторан @restaurant.Title </h5>
+                            <p class="card-text">
+                                @restaurant.ShortDescription
+                            </p>
+                            
+                            <a asp-controller="Restaurants" asp-action="Details" asp-route-id="@restaurant.Id" class="btn btn-outline-dark" role="button">View</a>
+                            @if (TempData["ErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @TempData["ErrorMessage"]
+                                </div>
+                            }
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <!-- Посилання на редагування (лише для Admin) -->
+                                <a asp-controller="Restaurants" asp-action="Edit" asp-route-id="@restaurant.Id" class="btn btn-warning" role="button">Edit</a>
+
+                                <!-- Кнопка видалення (лише для Admin) -->
+                                <form asp-controller="Restaurants" asp-action="Delete" asp-route-id="@restaurant.Id" method="post" onsubmit="return confirm('Ви впевнені, що хочете видалити цей ресторан?');" style="display:inline;">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/restaurants.css" />
+}

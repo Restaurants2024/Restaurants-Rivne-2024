@@ -1,0 +1,47 @@
+﻿@model List<Restaurant>
+<!DOCTYPE html>
+<html lang="uk">
+
+<body>
+    <!-- Смуга з текстом -->
+    <div class="highlight-bar">
+        <img src="/media/Rating/logo.png" alt="Логотип сайту">
+        <div>
+            <h1>РЕЙТИНГ РЕСТОРАНІВ</h1>
+            <h2>Обирайте серед найкращих закладів та насолоджуйтесь чудовою кухнею</h2>
+        </div>
+    </div>
+    
+    <!-- Контейнер для ресторанів -->
+    <div class="restaurant-container">
+        <!-- Ресторан 1 -->
+        @foreach (var restaurant in Model)
+        {
+            <div class="restaurant-card">
+                <img class="card-img-top" src="data:image/jpeg;base64,@Convert.ToBase64String(restaurant.Photo)" alt="" />
+                <div class="restaurant-info">
+                    <h2>@restaurant.Title</h2>
+                    <div class="rating">
+                        <span>⭐ @restaurant.Stars</span>
+                        <small>(85 відгуків)</small>
+                    </div>
+                    <p>@restaurant.DescriptionRating</p>
+                    <div class="contact-info">
+                        <p><strong>Корисні посилання:</strong> <a href="@restaurant.LinksRating" target="_blank">Переглянути</a></p>
+                        <p><strong>Номер телефону:</strong> @restaurant.TelNum</p>
+                    </div>
+                    <p><strong>Адреса:</strong>@restaurant.Address</p>
+                    <a asp-controller="Rating" asp-action="Details" asp-route-id="@restaurant.Id"class="btn-reviews">Переглянути відгуки</a>
+                </div>
+            </div>  
+                    
+        }
+
+    </div>
+
+</body>
+</html>
+@section Styles {
+    <link rel="stylesheet" href="~/css/rating.css" />
+}
+

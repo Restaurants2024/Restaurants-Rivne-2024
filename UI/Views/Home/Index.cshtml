@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<main>
+    <div class="cover">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide active">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Перша вкладка -->
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="https://static.spalerna.com.ua/products/78000/78173/u74766piz1_1800.webp" class="d-block w-100" alt="Restaurant Interior">
+                    <div class="carousel-caption">
+                        <h1 class="brand-title display-2 animated fadeInDown text-outline">Ваш гід по ресторанах Рівного</h1>
+                        <p class="animated fadeInUp text-outline">Відкрийте для себе найкращі заклади міста!</p>
+                    </div>
+                </div>
+                <!-- Друга вкладка -->
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://amiel.club/uploads/posts/2022-10/1664824167_3-amiel-club-p-interer-bara-oboi-5.jpg" class="d-block w-100" alt="Restaurant Food">
+                    <div class="carousel-caption">
+                        <h1 class="brand-title display-2 animated fadeInDown text-outline">Ексклюзивні пропозиції</h1>
+                        <p class="animated fadeInUp text-outline">Смачні страви, затишна атмосфера, незабутні вечори.</p>
+                    </div>
+                </div>
+                <!-- Третя вкладка -->
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="https://24.zp.ua/wp-content/uploads/2023/06/Perevagy-zamovlennya-pitsy-v-spetsializovanomu-zakladi.webp" class="d-block w-100" alt="Dining">
+                    <div class="carousel-caption">
+                        <h1 class="brand-title display-2 animated fadeInDown text-outline">Ресторани на будь-який смак</h1>
+                        <p class="animated fadeInUp text-outline">Обирайте кухню, яка вам до вподоби: італійська, японська, грузинська та інші.</p>
+                    </div>
+                </div>
+                <!-- Четверта вкладка -->
+                <div class="carousel-item">
+                    <img src="https://reston.ua/images/img/podborka_rooftop_restaurant_07_2019_1.jpg" class="d-block w-100" alt="Party at Restaurant">
+                    <div class="carousel-caption">
+                        <h1 class="brand-title display-2 animated fadeInDown text-outline">Святкуйте з нами</h1>
+                        <p class="animated fadeInUp text-outline">Ідеальні місця для святкувань та особливих подій.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Клавіші швидкої навігації -->
+    <section class="quick-navigation-section py-5">
+        <div class="container text-center">
+            <h3 class="mb-4">Швидка навігація</h3>
+            <div class="quick-navigation">
+                <a href="../Restaurants" class="btn btn-nav mx-3 my-2">Список закладів</a>
+                <a href="../Reservations" class="btn btn-nav mx-3 my-2">Забронювати стіл</a>
+                <a href="../Map" class="btn btn-nav mx-3 my-2">Мапа закладів</a>
+                <a href="../Contact" class="btn btn-nav mx-3 my-2">Зв'язок</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція "Про нас" -->
+    <section class="about-us text-center py-5">
+        <h2 class="display-4 mb-4">Про нас</h2>
+        <p class="lead about-text">
+            Ми — ваш надійний гід у світі гастрономії Рівного. Наша мета — допомогти вам знайти найкращі ресторани,
+            які ідеально підійдуть для будь-якої події: романтичної вечері, ділового обіду чи святкування важливих подій.
+            Ознайомтесь із нашим каталогом закладів, відкрийте для себе нові смаки та насолоджуйтесь приємною атмосферою.
+        </p>
+    </section>
+
+    <!-- Секція "Чому ми?" -->
+    <section class="why-us text-center py-5">
+        <h2 class="display-4 mb-4">Чому ми?</h2>
+        <p class="lead about-text">
+            Ми пропонуємо унікальний досвід вибору ресторанів, адаптований до ваших уподобань.
+            У нашому каталозі представлені заклади різних кухонь світу, які вирізняються високою якістю обслуговування
+            та чудовою атмосферою. Завдяки зручній навігації ви швидко знайдете ідеальне місце для будь-якої події.
+        </p>
+    </section>
+</main>
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}

@@ -1,0 +1,94 @@
+﻿@model Restaurant
+
+<h1>Додати новий ресторан</h1>
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="Title">Назва ресторану</label>
+        <input type="text" class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ShortDescription">Короткий опис для боксу</label>
+        <textarea class="form-control" asp-for="ShortDescription"></textarea>
+        <span asp-validation-for="ShortDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Опис</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Stars">Кількість зірок</label>
+        <input type="number" class="form-control" asp-for="Stars" min="1" max="5" />
+        <span asp-validation-for="Stars" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="WorkSchedule">Графік роботи</label>
+        <input type="text" class="form-control" asp-for="WorkSchedule" />
+        <span asp-validation-for="WorkSchedule" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="DescriptionRating">Опис короткий для рейтингу</label>
+        <input type="text" class="form-control" asp-for="DescriptionRating" />
+        <span asp-validation-for="DescriptionRating" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="LinksRating">Посилання для рейтингу</label>
+        <input type="text" class="form-control" asp-for="LinksRating" />
+        <span asp-validation-for="LinksRating" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="FavoriteLinks">Посилання на меню</label>
+        <input type="text" class="form-control" asp-for="FavoriteLinks" />
+        <span asp-validation-for="FavoriteLinks" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="TelNum">Номер телефону</label>
+        <input type="tel" class="form-control" asp-for="TelNum" />
+        <span asp-validation-for="TelNum" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Address">Адреса</label>
+        <input type="text" class="form-control" asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Photo">Фото</label>
+        <input type="file"
+               accept=".png,.jpg,.jpeg,.gif,.tif"
+               asp-for="Photo"
+               class="form-control"
+               style="border:0px!important;padding: 0px;padding-top: 10px;padding-bottom: 30px;" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="PointX">Координата X</label>
+        <input type="number" step="any" class="form-control" asp-for="PointX" />
+        <span asp-validation-for="PointX" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="PointY">Координата Y</label>
+        <input type="number" step="any" class="form-control" asp-for="PointY" />
+        <span asp-validation-for="PointY" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Додати</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
